@@ -8,7 +8,7 @@ sky:
     password: dbuserdbuser
 
   alioss:
-    endpoint: oss-cn-beijing.aliyuncs.com
-    access-key-id: LTAI5t5tU2nRMSuFY9DtRAWn
-    access-key-secret: FtES2IXio4LlOD8RHyAuP6uJWQIMGv
-    bucket-name: javaweb-ai123
+    endpoint: 
+    access-key-id: 
+    access-key-secret: 
+    bucket-name: 
