@@ -56,9 +56,9 @@ public class DishController {
     }
 
     @GetMapping("/list")
-    public Result<List<DishVO>> list(Long categoryId){
-        log.info("根据分类id查询菜品：{}", categoryId);
-        List<DishVO> dishVOList = dishService.list(categoryId);
+    public Result<List<DishVO>> list(Long categoryId, String name){
+        log.info("根据分类id查询菜品：{},{}", categoryId, name);
+        List<DishVO> dishVOList = dishService.list(categoryId, name);
         return Result.success(dishVOList);
     }
 
