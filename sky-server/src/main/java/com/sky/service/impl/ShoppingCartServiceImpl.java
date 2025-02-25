@@ -80,10 +80,21 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     public void sub(ShoppingCartDTO shoppingCartDTO) {
-//        ShoppingCart shoppingCart = new ShoppingCart();
-//        BeanUtils.copyProperties(shoppingCartDTO, shoppingCart);
-//        shoppingCart.setUserId(BaseContext.getCurrentId());
-//        shoppingCart.setNumber(shoppingCart.getNumber() - 1);
+        ShoppingCart shoppingCart = new ShoppingCart();
+        BeanUtils.copyProperties(shoppingCartDTO, shoppingCart);
+        shoppingCart.setUserId(BaseContext.getCurrentId());
+        List<ShoppingCart> list = shoppingCartMapper.list(shoppingCart);
+        if (list != null && list.size() > 0) {
+            ShoppingCart cart = list.get(0);
+            Integer number = cart.getNumber();
+            if(number == 1){
+                shoppingCartMapper.deleteById(cart.getId());
+            }else {
+                cart.setNumber(number - 1);
+                shoppingCartMapper.updataNumberById(cart);
+            }
+        }
+
     }
 
 
