@@ -22,3 +22,8 @@ sky:
   wechat:
     appid: wx3e114efe945bb305
     secret: f54613d4d718e79e1f5821bd44a08a7d
+
+  shop:
+    address: 成都市郫都区天骄路57号
+  baidu:
+    ak: 5WkYg2FdNsvvml0Tm0bAnvztsk93cuZf
